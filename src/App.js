@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React from 'react';
 import styled from 'styled-components';
+import  movieicon from './movieicon.jpg';
+import  searchicon from './search_icon.png';
 import { MovieComponent } from './MyComponent/MovieComponent';
 import { useState } from 'react';
 import { MovieInfoComponent } from './MyComponent/MovieInfoComponent';
@@ -103,19 +105,19 @@ function App() {
       <Header>
 
         <AppName>
-        <Icon src="/movieicon.jpg"></Icon>
+        <Icon src={movieicon}></Icon>
           MovieMania
         </AppName>
 
         <SearchBox>
-            <SearchIcon src="/search_icon.png"></SearchIcon>
+            <SearchIcon src={searchicon}></SearchIcon>
             <SearchInput placeholder='movie name...' value ={searchQuery} onChange={onTextChange}/>
         </SearchBox>
 
       </Header>
       {selectedMovie && <MovieInfoComponent selectedMovie={selectedMovie} onMovieSelect={onMovieSelect} />}
       <MovieListContainer>
-        {movieList?.length ? movieList.map((movie, index) => <MovieComponent key={index} movie={movie} onMovieSelect={onMovieSelect} />) : <Placeholder src="/movieicon.jpg"/>}
+        {movieList?.length ? movieList.map((movie, index) => <MovieComponent key={index} movie={movie} onMovieSelect={onMovieSelect} />) : <Placeholder src={movieicon}/>}
       </MovieListContainer>
    </Container>  
   
