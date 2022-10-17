@@ -74,7 +74,7 @@ const MovieListContainer = styled.div`
 const Placeholder = styled.img`
   width: 400px;
   height: 400px;
-  margin 150px;
+  margin: 150px;
   opacity: 500%;
 `;
 
@@ -84,7 +84,7 @@ function App() {
   const [movieList, updateMovieList] = useState([]);
   const [selectedMovie, onMovieSelect] = useState();
 
-  const fetchData = async(searchString) => {
+  const fetchData = async (searchString) => {
     const response = await axios.get(`https://www.omdbapi.com/?s=${searchString}&apikey=${API_KEY}`);
     updateMovieList(response.data.Search);
   }
